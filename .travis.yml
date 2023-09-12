@@ -1,6 +1,6 @@
 sudo: required
 
-langueage:generic
+langueage: generic
 
 services:
   - docker
