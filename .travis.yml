@@ -1,0 +1,16 @@
+sudo: required
+
+langueage:generic
+
+services:
+  - docker
+
+before_install:
+  - echo "start creating and image with dockerfile"
+  - docker build -t koyejin/docker-react-app -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true koyejin/docker-react-app npm run test --coverage
+
+after_success:
+  - echo "Test success"
